@@ -1,22 +1,22 @@
-
+import React, { useState } from "react";
 
 function App() {
+  const [count, setCount] = useState(0);
+  const [show, setShow]= useState(true)
+
+  const Increment =(e)=>{
+    setCount(count+1)
+    setShow(!show)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {count}
+      <div>
+        <button onClick={Increment}>Click Me</button>
+      </div>
+      {show && <span>This is text</span>}
+      
     </div>
   );
 }
