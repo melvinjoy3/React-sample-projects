@@ -1,24 +1,20 @@
+import React from 'react'
+import {fireBase as firebase} from './firebase/config';
 
 
 function App() {
+
+  const fBase=(e)=>{
+    firebase.firestore().collection('products').add({
+      name:"Melvin"
+    })
+
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={fBase}>Click Me</button>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
